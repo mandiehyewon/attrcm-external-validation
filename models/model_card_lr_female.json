@@ -1,0 +1,283 @@
+{
+  "schema_version": "1.0",
+  "model_type": "logistic_regression",
+  "task": {
+    "label": "TTR",
+    "cohort": "female"
+  },
+  "predict": "p = 1/(1+exp(-(intercept + sum_i weight_i * transform_i(x_i)))); positive if p >= decision_threshold",
+  "intercept": -11.831607296995864,
+  "features": [
+    {
+      "name": "Age_at_T0",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 76.66803559206024,
+      "weight": 0.009270570161754008
+    },
+    {
+      "name": "Gender_Legal_Sex",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 0.0
+    },
+    {
+      "name": "HTN",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": -0.3316692627490446
+    },
+    {
+      "name": "CAD",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 0.0
+    },
+    {
+      "name": "AF",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": -0.14848067667709244
+    },
+    {
+      "name": "VT",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 2.212841780338418
+    },
+    {
+      "name": "OrthoHypo",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 0.6057209081838676
+    },
+    {
+      "name": "AS",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 0.3141898058537052
+    },
+    {
+      "name": "AVReplace",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 0.37161856144929234
+    },
+    {
+      "name": "CTS",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 3.5202335852099584
+    },
+    {
+      "name": "PolyNeuro",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 2.8543988816810955
+    },
+    {
+      "name": "Neuropathy",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 5.006315287279516
+    },
+    {
+      "name": "SPST",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 0.47009828200046433
+    },
+    {
+      "name": "BTR",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 0.0
+    },
+    {
+      "name": "KneeReplace",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 2.4818161344710368
+    },
+    {
+      "name": "HipReplace",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 0.0
+    },
+    {
+      "name": "Proteinuria",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 1.5483254897458278
+    },
+    {
+      "name": "Fatigue",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 1.2734454042319332
+    },
+    {
+      "name": "Dyslipidemia",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": -0.1373054821642619
+    },
+    {
+      "name": "Hypothyroidism",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": -0.09022461868833168
+    },
+    {
+      "name": "Diabetes",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 0.0
+    },
+    {
+      "name": "COPD",
+      "kind": "binary",
+      "transform": "identity",
+      "impute_raw": 0.0,
+      "weight": 0.1490444797623858
+    },
+    {
+      "name": "Prealbumin",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 16.0,
+      "weight": -0.02293675711855056
+    },
+    {
+      "name": "eGFR",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 59.0,
+      "weight": 0.005919831153358232
+    },
+    {
+      "name": "NT_proBNP",
+      "kind": "continuous",
+      "transform": "log1p",
+      "impute_raw": 1410.0,
+      "weight": -0.1265470522897315
+    },
+    {
+      "name": "BNP",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 96.0,
+      "weight": 0.0008130592338900991
+    },
+    {
+      "name": "Troponin",
+      "kind": "continuous",
+      "transform": "log1p",
+      "impute_raw": 25.0,
+      "weight": -0.13414021884397453
+    },
+    {
+      "name": "Sodium",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 139.0,
+      "weight": 0.033198258486494055
+    },
+    {
+      "name": "Potassium",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 4.2,
+      "weight": 0.46658658472297093
+    },
+    {
+      "name": "Chloride",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 102.0,
+      "weight": 0.028446275136795412
+    },
+    {
+      "name": "ejection_fraction",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 60.0,
+      "weight": 0.0
+    },
+    {
+      "name": "LVIDed_mm",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 43.0,
+      "weight": -0.07306202682887514
+    },
+    {
+      "name": "IVS_mm",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 11.0,
+      "weight": 0.0
+    },
+    {
+      "name": "PWT_mm",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 10.0,
+      "weight": 0.46907897166868334
+    },
+    {
+      "name": "relative_wall_thickness",
+      "kind": "continuous",
+      "transform": "identity",
+      "impute_raw": 0.4761904761904761,
+      "weight": 0.0
+    }
+  ],
+  "decision_threshold": 0.44091299420045443,
+  "threshold_objective": "youden",
+  "metadata": {
+    "source_repo": "women_amyloidosis (MGB training)",
+    "split_dir": "/home/hyewonj/women_amyloidosis/hf_data/normalized_mice/female",
+    "imputation": "mice",
+    "missing_indicators": "excluded (--no-missing)",
+    "model_selection_metric": "auroc",
+    "best_params": {
+      "clf__C": 0.01,
+      "clf__penalty": "l1",
+      "clf__class_weight": "balanced"
+    },
+    "n_train": 17255,
+    "n_test": 5752,
+    "n_features": 35,
+    "gender_encoding": "Gender_Legal_Sex: Male=1, Female=0",
+    "imputation_caveat": "Training used MICE (per-row multivariate imputation), which a frozen card cannot reproduce. The card falls back to the train median for a missing input, so it matches the training pipeline exactly only on rows where every continuous feature is observed.",
+    "verification": {
+      "max_abs_prob_deviation_complete_rows": 6.8833827526759706e-15,
+      "max_abs_prob_deviation_incomplete_rows": 0.7135719392313283,
+      "n_complete_rows": 4,
+      "n_test_rows": 5752,
+      "tolerance": 1e-06
+    }
+  }
+}

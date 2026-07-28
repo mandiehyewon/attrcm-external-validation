@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0",
+  "model_type": "xgboost",
+  "task": {
+    "label": "TTR",
+    "cohort": "all"
+  },
+  "predict": "Build the feature matrix in preprocessing.feature_order by applying, per column: impute_raw for missing -> log1p (if set) -> (x-z_mean)/z_std -> (x-scaler_mean)/scaler_scale, using only the keys present. Then p = booster.predict(DMatrix(X)); positive if p >= decision_threshold.",
+  "preprocessing": {
+    "feature_order": [
+      "Age_at_T0",
+      "Gender_Legal_Sex",
+      "HTN",
+      "CAD",
+      "AF",
+      "VT",
+      "OrthoHypo",
+      "AS",
+      "AVReplace",
+      "CTS",
+      "PolyNeuro",
+      "Neuropathy",
+      "SPST",
+      "BTR",
+      "KneeReplace",
+      "HipReplace",
+      "Proteinuria",
+      "Fatigue",
+      "Dyslipidemia",
+      "Hypothyroidism",
+      "Diabetes",
+      "COPD",
+      "Prealbumin",
+      "eGFR",
+      "NT_proBNP",
+      "BNP",
+      "Troponin",
+      "Sodium",
+      "Potassium",
+      "Chloride",
+      "ejection_fraction",
+      "LVIDed_mm",
+      "IVS_mm",
+      "PWT_mm",
+      "relative_wall_thickness"
+    ],
+    "continuous": {
+      "Age_at_T0": {
+        "log1p": false,
+        "impute_raw": 74.26009582477755,
+        "z_mean": 72.46319433388511,
+        "z_std": 14.583258413892205
+      },
+      "Prealbumin": {
+        "log1p": false,
+        "impute_raw": 17.0,
+        "z_mean": 16.895716311726712,
+        "z_std": 3.9909808945581444
+      },
+      "eGFR": {
+        "log1p": false,
+        "impute_raw": 61.0,
+        "z_mean": 61.60475977097859,
+        "z_std": 24.47713573341572
+      },
+      "NT_proBNP": {
+        "log1p": true,
+        "impute_raw": 1376.0,
+        "z_mean": 7.305733334524989,
+        "z_std": 1.6932833560032907
+      },
+      "BNP": {
+        "log1p": false,
+        "impute_raw": 99.15,
+        "z_mean": 258.52067296666803,
+        "z_std": 267.5770959095469
+      },
+      "Troponin": {
+        "log1p": true,
+        "impute_raw": 31.0,
+        "z_mean": 3.618480902679956,
+        "z_std": 1.8250988105610624
+      },
+      "Sodium": {
+        "log1p": false,
+        "impute_raw": 139.0,
+        "z_mean": 138.9191284002752,
+        "z_std": 3.8463938561556454
+      },
+      "Potassium": {
+        "log1p": false,
+        "impute_raw": 4.2,
+        "z_mean": 4.238374308513082,
+        "z_std": 0.49692987718612125
+      },
+      "Chloride": {
+        "log1p": false,
+        "impute_raw": 102.0,
+        "z_mean": 102.37576419787815,
+        "z_std": 2.8565586325561005
+      },
+      "ejection_fraction": {
+        "log1p": false,
+        "impute_raw": 59.0,
+        "z_mean": 54.67357635283219,
+        "z_std": 12.92755031809064
+      },
+      "LVIDed_mm": {
+        "log1p": false,
+        "impute_raw": 47.0,
+        "z_mean": 47.24791940601816,
+        "z_std": 7.732619450626956
+      },
+      "IVS_mm": {
+        "log1p": false,
+        "impute_raw": 11.0,
+        "z_mean": 11.334364502500089,
+        "z_std": 2.520831541136474
+      },
+      "PWT_mm": {
+        "log1p": false,
+        "impute_raw": 10.0,
+        "z_mean": 10.665268635697942,
+        "z_std": 2.234487757935434
+      },
+      "relative_wall_thickness": {
+        "log1p": false,
+        "impute_raw": 0.4594594594594595,
+        "z_mean": 0.4842837682669286,
+        "z_std": 0.14401842306079085
+      }
+    },
+    "passthrough_impute": {},
+    "missing_indicators": {}
+  },
+  "booster_file": "model_card_xgb_all.ubj",
+  "decision_threshold": 0.0073059662245213985,
+  "threshold_objective": "youden",
+  "metadata": {
+    "source_repo": "women_amyloidosis (MGB training)",
+    "split_dir": "/home/hyewonj/women_amyloidosis/hf_data/normalized_mice/all",
+    "imputation": "mice",
+    "missing_indicators": "excluded (--no-missing)",
+    "model_selection_metric": "auroc",
+    "best_params": {
+      "clf__n_estimators": 200,
+      "clf__max_depth": 5,
+      "clf__learning_rate": 0.05
+    },
+    "n_train": 37936,
+    "n_test": 12646,
+    "n_features": 35,
+    "gender_encoding": "Gender_Legal_Sex: Male=1, Female=0",
+    "imputation_caveat": "Training used MICE (per-row multivariate imputation), which a frozen card cannot reproduce. The card falls back to the train median for a missing input, so it matches the training pipeline exactly only on rows where every continuous feature is observed.",
+    "verification": {
+      "max_abs_prob_deviation_complete_rows": 0.0,
+      "max_abs_prob_deviation_incomplete_rows": 0.41274820640683174,
+      "n_complete_rows": 6,
+      "n_test_rows": 12646,
+      "tolerance": 1e-06
+    }
+  }
+}

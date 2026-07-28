@@ -1,0 +1,5 @@
+# External-validation dependencies (Python 3.10). Versions are a known-good set.
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.5.0   # AUROC/AUPRC in src.metrics; pipeline objects when generating cards
+xgboost==2.0.3        # score model_type "xgboost" cards (predict_xgb_from_card loads the .ubj booster)
